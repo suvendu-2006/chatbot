@@ -120,7 +120,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 48px;height:64px;
 
 /* Timeline */
 .month-section{position:relative;padding-left:36px;margin-bottom:72px}
-.month-section::before{content:'absolute;left:11px;top:8px;bottom:0;width:1px;background:rgba(59,130,246,.15)}
+.month-section::before{content:'';position:absolute;left:11px;top:8px;bottom:0;width:1px;background:rgba(59,130,246,.15)}
 .month-dot{position:absolute;left:4px;top:8px;width:16px;height:16px;border-radius:50%;background:rgba(59,130,246,.2);border:2px solid rgba(59,130,246,.5)}
 .month-title{font-size:28px;font-weight:800;letter-spacing:-1px;margin-bottom:6px}
 .month-goal{font-size:14px;color:rgba(255,255,255,.45);margin-bottom:24px;max-width:700px}
