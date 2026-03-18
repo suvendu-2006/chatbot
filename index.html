@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jarvis AI Project — Roadmap</title>
 <meta name="description" content="The complete roadmap for the Jarvis AI Project by Suvendu.">
+<link rel="canonical" href="https://jarvis-ai-roadmap.com/">
+<meta property="og:title" content="Jarvis AI Project — Roadmap">
+<meta property="og:description" content="The complete roadmap for the Jarvis AI Project by Suvendu.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jarvis AI Project — Roadmap">
+<meta name="twitter:description" content="The complete roadmap for the Jarvis AI Project by Suvendu.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,14 +21,14 @@
 <div id="cursor-glow"></div>
 
 <nav id="navbar">
-  <div class="nav-logo" onclick="navigate('')">Jarvis<span>AI</span></div>
+  <a href="#" class="nav-logo">Jarvis<span>AI</span></a>
   <div class="nav-links" id="nav-links"></div>
 </nav>
 
-<div id="search-overlay">
-  <div class="search-container">
-    <div class="search-input-wrap"><span class="search-icon">⌕</span><input type="text" id="search-input" placeholder="Search roadmap..." autocomplete="off"></div>
-    <div class="search-results" id="search-results"></div>
+<div id="search-overlay" role="dialog" aria-modal="true" aria-label="Search roadmap">
+  <div class="search-container" role="document">
+    <div class="search-input-wrap"><span class="search-icon" aria-hidden="true">⌕</span><input type="text" id="search-input" placeholder="Search roadmap..." autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list"></div>
+    <div class="search-results" id="search-results" role="listbox"></div>
   </div>
 </div>
 

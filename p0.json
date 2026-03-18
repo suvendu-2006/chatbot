@@ -420,7 +420,7 @@
   ],
 
   "resources": [
-    { "name": "Harry's Python Course", "covers": "Complete Python from scratch", "link": "Search on YouTube" },
+    { "name": "Harry's Python Course", "covers": "Complete Python from scratch", "search_hint": "Search on YouTube" },
     { "name": "CS50P Harvard", "covers": "Structured Python course with problem sets", "link": "cs50.harvard.edu/python" },
     { "name": "Python Official Docs", "covers": "Every built-in function and module", "link": "docs.python.org" },
     { "name": "W3Schools Python", "covers": "Quick syntax reference", "link": "w3schools.com/python" },
