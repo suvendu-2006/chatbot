@@ -31,12 +31,12 @@ function updateNav(page){
   const nl=document.getElementById('nav-links');
   let html='';
   if(page==='phase0'&&P0){
-    html='<a href="javascript:void(0)" onclick="navigate(\'\'\);return false;">Home</a>';
-    P0.weeks.forEach(w=>{html+=`<a href="javascript:void(0)" onclick="scrollToEl(\'p0w${w.week-1}\');return false;" class="nav-week-link">W${w.week}</a>`;});
+    html='<a href="javascript:void(0)" onclick="navigate(\'\');return false;">Home</a>';
+    P0.weeks.forEach(w=>{html+=`<a href="javascript:void(0)" onclick="scrollToEl('p0w${w.week-1}');return false;" class="nav-week-link">W${w.week}</a>`;});
     html+=`<button class="nav-search-btn" onclick="openSearch()">Search <kbd>⌘K</kbd></button>`;
   }else if(page==='path1'&&P1){
-    html='<a href="javascript:void(0)" onclick="navigate(\'\'\);return false;">Home</a>';
-    P1.months.forEach(m=>{html+=`<a href="javascript:void(0)" onclick="scrollToEl(\'p1m${m.month}\');return false;" class="nav-month-link">Month ${m.month}</a>`;});
+    html='<a href="javascript:void(0)" onclick="navigate(\'\');return false;">Home</a>';
+    P1.months.forEach(m=>{html+=`<a href="javascript:void(0)" onclick="scrollToEl('p1m${m.month}');return false;" class="nav-month-link">Month ${m.month}</a>`;});
     html+=`<button class="nav-search-btn" onclick="openSearch()">Search <kbd>⌘K</kbd></button>`;
   }else{
     html='<button class="nav-search-btn" onclick="openSearch()">Search <kbd>⌘K</kbd></button>';
@@ -67,7 +67,7 @@ function buildLanding(){
 // === PHASE 0 ===
 function buildPhase0(){
   const c=document.getElementById('phase0-content');
-  let h='<div class="back-btn" onclick="navigate(\'\'\)">← Back to Home</div>';
+  let h='<div class="back-btn" onclick="navigate(\'\')">← Back to Home</div>';
   h+=`<div class="section-header"><div class="section-badge badge-green">Phase 0</div><h2 class="section-title">${P0.document}</h2><p class="section-subtitle">${P0.goal}</p></div>`;
   // Setup
   h+=`<div class="glass-card green-glow" style="margin-bottom:48px"><h3 style="font-size:18px;font-weight:700;margin-bottom:12px">${P0.setup.title}</h3><ol style="padding-left:18px">${P0.setup.steps.map(s=>`<li style="margin-bottom:8px;font-size:13px;color:rgba(255,255,255,.55)">${s}</li>`).join('')}</ol></div>`;
@@ -111,7 +111,7 @@ function buildPhase0(){
 // === PATH 1 ===
 function buildPath1(){
   const c=document.getElementById('path1-content');
-  let h='<div class="back-btn" onclick="navigate(\'\'\)">← Back to Home</div>';
+  let h='<div class="back-btn" onclick="navigate(\'\')">← Back to Home</div>';
   h+=`<div class="section-header"><div class="section-badge badge-blue">Path 1</div><h2 class="section-title">${P1.document}</h2><p class="section-subtitle">${P1.end_goal}</p></div>`;
   // Features
   const fi=['💬','🧠','🗂️','🎤','🔊','🔍','📄','🎭','🌐','🚀'];
@@ -189,10 +189,10 @@ function updateProgress(){
   document.getElementById('progress-text').textContent=`${done} / ${total} weeks`;
 }
 
-function loadProgress(){try{const st=JSON.parse(localStorage.getItem('jarvis_progress')||'{}');Object.entries(st).forEach(([id,checked])=>{const cb=document.querySelector(\`[data-week="${id}"]\`);if(cb)cb.checked=checked;});}catch(e){}updateProgress();}
+function loadProgress(){try{const st=JSON.parse(localStorage.getItem('jarvis_progress')||'{}');Object.entries(st).forEach(([id,checked])=>{const cb=document.querySelector(`[data-week="${id}"]`);if(cb)cb.checked=checked;});}catch(e){}updateProgress();}
 
 // === PARTICLES ===
-function initParticles(){const cv=document.getElementById('particles-canvas');if(!cv)return;const ctx=cv.getContext('2d');let w,h,pts=[];function resize(){w=cv.width=window.innerWidth;h=cv.height=window.innerHeight;}resize();window.addEventListener('resize',resize);for(let i=0;i<35;i++)pts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+.5,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3,o:Math.random()*.3+.1});function draw(){ctx.clearRect(0,0,w,h);pts.forEach(p=>{p.x+=p.dx;p.y+=p.dy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=\`rgba(255,255,255,${p.o})\`;ctx.fill();});requestAnimationFrame(draw);}draw();}
+function initParticles(){const cv=document.getElementById('particles-canvas');if(!cv)return;const ctx=cv.getContext('2d');let w,h,pts=[];function resize(){w=cv.width=window.innerWidth;h=cv.height=window.innerHeight;}resize();window.addEventListener('resize',resize);for(let i=0;i<35;i++)pts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+.5,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3,o:Math.random()*.3+.1});function draw(){ctx.clearRect(0,0,w,h);pts.forEach(p=>{p.x+=p.dx;p.y+=p.dy;if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${p.o})`;ctx.fill();});requestAnimationFrame(draw);}draw();}
 
 // === CURSOR GLOW ===
 document.addEventListener('mousemove',e=>{const g=document.getElementById('cursor-glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';});
@@ -206,9 +206,9 @@ document.getElementById('search-input').addEventListener('input',e=>{
   const q=e.target.value.toLowerCase().trim();const res=document.getElementById('search-results');
   if(!q){res.innerHTML='';return;}
   const matches=searchIndex.filter(s=>s.title.toLowerCase().includes(q)||s.detail.toLowerCase().includes(q)).slice(0,12);
-  res.innerHTML=matches.map(m=>`<div class="search-result-item" onclick="goTo(\'${m.page||''}\',\'${m.id}\')"><div class="search-result-type">${m.type}</div><div class="search-result-title">${hl(m.title,q)}</div>${m.detail?`<div class="search-result-detail">${hl(m.detail,q)}</div>`:''}</div>`).join('')||'<div style="padding:20px;font-size:14px;color:rgba(255,255,255,.3);text-align:center">No results</div>';
+  res.innerHTML=matches.map(m=>`<div class="search-result-item" onclick="goTo('${m.page||''}','${m.id}')"><div class="search-result-type">${m.type}</div><div class="search-result-title">${hl(m.title,q)}</div>${m.detail?`<div class="search-result-detail">${hl(m.detail,q)}</div>`:''}</div>`).join('')||'<div style="padding:20px;font-size:14px;color:rgba(255,255,255,.3);text-align:center">No results</div>';
 });
-function hl(t,q){if(!q)return t;return t.replace(new RegExp(\`(${q.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&')})\`,'gi'),'<mark>$1</mark>');}
+function hl(t,q){if(!q)return t;return t.replace(new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'gi'),'<mark>$1</mark>');}
 function goTo(page,id){closeSearch();if(page)navigate(page);setTimeout(()=>{const el=document.getElementById(id);if(el){const y=el.getBoundingClientRect().top+window.pageYOffset-80;window.scrollTo({top:y,behavior:'smooth'});toggleWeek(id);}},200);}
 
 loadData();
