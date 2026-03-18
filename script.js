@@ -555,7 +555,7 @@ document.getElementById('search-input').addEventListener('input', e => {
 
 function appendHighlighted(parent, text, query) {
   if(!query) { parent.textContent = text; return; }
-  const regex = new RegExp(`(${query.replace(/[-.\\[\\]{}()*+?.,\\\\^$|#\\s]/g, '\\\\$&')})`, 'gi');
+  const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
   const parts = text.split(regex);
   parts.forEach(p => {
     if (p.toLowerCase() === query) parent.appendChild(el('mark', { textContent: p }));
