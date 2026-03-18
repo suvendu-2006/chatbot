@@ -1,0 +1,432 @@
+{
+  "project": "Jarvis AI Project",
+  "document": "Phase 0 — Python From Zero to Chatbot-Ready",
+  "created_by": "Suvendu",
+  "role": "ML Engineer Lead",
+  "college": "Trident Academy of Technology",
+  "duration": "8 Weeks",
+  "team_size": 6,
+  "daily_commitment": "1 to 2 hours",
+  "prior_knowledge": "Basic C programming",
+  "goal": "Every member writes Python confidently and is ready to build Friday",
+
+  "setup": {
+    "title": "Before Week 1 — Setup Guide",
+    "steps": [
+      "Install Python 3.11 from python.org. During installation check Add Python to PATH. Verify by typing python --version in terminal.",
+      "Install VS Code from code.visualstudio.com. Install extensions: Python by Microsoft, Pylance, Python Indent, GitLens.",
+      "Install Git from git-scm.com. Run: git config --global user.name and git config --global user.email in terminal.",
+      "Create a free GitHub account at github.com. Share your username in the team group.",
+      "Shuv adds all members to the friday-ai GitHub repository as collaborators. Everyone runs git clone.",
+      "Inside the repo create a folder called practice/your_name/ for all daily practice code.",
+      "Open VS Code, create hello.py, type print('Hello from your name') and press F5 to run. If you see your message setup is complete."
+    ]
+  },
+
+  "c_vs_python": {
+    "title": "C vs Python — What Your Team Already Knows",
+    "comparison": [
+      { "concept": "Print output", "c": "printf(\"Hello\\n\");", "python": "print('Hello')" },
+      { "concept": "Declare variable", "c": "int age = 20;", "python": "age = 20" },
+      { "concept": "If condition", "c": "if (age > 18) { ... }", "python": "if age > 18:" },
+      { "concept": "For loop", "c": "for(int i=0; i<5; i++) { ... }", "python": "for i in range(5):" },
+      { "concept": "While loop", "c": "while(x > 0) { ... }", "python": "while x > 0:" },
+      { "concept": "Function", "c": "int add(int a, int b) { return a+b; }", "python": "def add(a, b): return a + b" },
+      { "concept": "Array", "c": "int arr[5] = {1,2,3,4,5};", "python": "arr = [1, 2, 3, 4, 5]" },
+      { "concept": "String", "c": "char name[] = \"Shuv\";", "python": "name = \"Shuv\"" },
+      { "concept": "Comments", "c": "// this is a comment", "python": "# this is a comment" },
+      { "concept": "Semicolons", "c": "Required at every line end", "python": "Not needed ever" },
+      { "concept": "Curly braces", "c": "Required for code blocks", "python": "Use 4 spaces indentation instead" },
+      { "concept": "Data types", "c": "Must declare int, char, float", "python": "Python figures it out automatically" }
+    ]
+  },
+
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Python Basics — Variables, Data Types and Input/Output",
+      "goal": "Every member writes a program that asks for name and age then prints a personalised message.",
+      "resource": "Harry's Python course — Chapters 1 to 4",
+      "days": [
+        {
+          "day": 1,
+          "topic": "Variables and Data Types",
+          "concepts": [
+            "What is a variable — a box that stores a value",
+            "Four basic data types: int, float, str, bool",
+            "type() function — tells you what kind of data something is",
+            "C comparison: in C you wrote int x = 5 — in Python just write x = 5"
+          ],
+          "practice": "Create 5 variables: your name, age, height, is_student, gpa — print each one"
+        },
+        {
+          "day": 2,
+          "topic": "Strings — Working With Text",
+          "concepts": [
+            "String basics — text in single or double quotes",
+            "String concatenation — joining strings with +",
+            "f-strings — inserting variable values directly into text",
+            "String methods: .upper(), .lower(), .strip(), .replace(), .split()",
+            "String length with len()"
+          ],
+          "practice": "Ask user for full name. Print it in uppercase, lowercase, and count its length."
+        },
+        {
+          "day": 3,
+          "topic": "Input from User and Type Conversion",
+          "concepts": [
+            "input() function — pauses program and waits for user to type",
+            "input always returns a string even if user types a number",
+            "Type conversion: int(), float(), str()",
+            "Common mistake: cannot do math with input directly — convert first"
+          ],
+          "practice": "Ask user for two numbers. Print their sum, difference, product, and division."
+        },
+        {
+          "day": 4,
+          "topic": "If / Elif / Else — Making Decisions",
+          "concepts": [
+            "if statement — runs code only when condition is True",
+            "elif and else — check more conditions or handle no match",
+            "Comparison operators: ==, !=, >, <, >=, <=",
+            "Logical operators: and, or, not",
+            "C comparison: if (x > 5) {} becomes if x > 5: with indentation"
+          ],
+          "practice": "Write a grade calculator — ask for marks, print A/B/C/D/F based on score."
+        },
+        {
+          "day": 5,
+          "topic": "Week 1 Project — Simple Personal Assistant",
+          "project": {
+            "requirements": [
+              "Ask for name, age, and city",
+              "Greet the user by name",
+              "Tell them if they are a minor or adult based on age",
+              "Ask a simple math question and check the answer",
+              "Ask them to rate their day from 1 to 10",
+              "Respond differently based on their rating",
+              "Push completed project to GitHub by Sunday night"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "title": "Loops, Lists and Functions",
+      "goal": "Every member writes a contact book program using lists and functions.",
+      "resource": "Harry's Python course — Chapters 5 to 8",
+      "days": [
+        {
+          "day": 1,
+          "topic": "For Loops and While Loops",
+          "concepts": [
+            "for loop with range() — runs a fixed number of times",
+            "for loop with a list — loops through each item",
+            "while loop — keeps running while condition is True",
+            "break — exits loop immediately",
+            "continue — skips to next iteration",
+            "C comparison: identical logic, only syntax changes"
+          ],
+          "practice": "Print multiplication table for any number the user enters."
+        },
+        {
+          "day": 2,
+          "topic": "Lists — Python's Most Used Data Structure",
+          "concepts": [
+            "Creating a list — ordered collection of any data type",
+            "Accessing items by index — starts at 0 like C arrays",
+            "append(), remove(), pop() — adding and removing items",
+            "len() — number of items in list",
+            "Looping through a list",
+            "List slicing — getting a portion of the list"
+          ],
+          "practice": "Create list of 5 team member names. Print numbered. Add one. Remove one. Print again."
+        },
+        {
+          "day": 3,
+          "topic": "Dictionaries — Key-Value Storage",
+          "concepts": [
+            "Stores data as key:value pairs like a contact book",
+            "Creating, accessing, adding, and updating dictionary entries",
+            "Looping through keys and values with .items()",
+            "Safe access with .get() to avoid errors",
+            "Why critical for AI — all API responses come back as dictionaries"
+          ],
+          "practice": "Create a dictionary for each team member with name, role, and favourite language."
+        },
+        {
+          "day": 4,
+          "topic": "Functions — Writing Reusable Code",
+          "concepts": [
+            "Why functions — write once, use many times",
+            "def keyword — defining a function",
+            "Parameters and arguments",
+            "return statement — sending values back",
+            "Default parameters — fallback values if nothing passed",
+            "C comparison: same concept but no need to declare return type"
+          ],
+          "practice": "Write 5 functions: add, subtract, multiply, divide, power. Test each with user input."
+        },
+        {
+          "day": 5,
+          "topic": "Week 2 Project — Contact Book",
+          "project": {
+            "requirements": [
+              "Menu: Add Contact, View All, Search, Delete, Exit",
+              "Each contact stores name, phone number, email",
+              "add_contact() function",
+              "view_contacts() function",
+              "search_contact(name) function",
+              "delete_contact(name) function",
+              "Menu loops until user chooses Exit",
+              "Push to GitHub by Sunday night"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "title": "Object Oriented Programming and File Handling",
+      "goal": "Every member builds a Student Management System using classes.",
+      "resource": "Harry's Python course — OOP section",
+      "days": [
+        {
+          "day": 1,
+          "topic": "Classes and Objects — The Basics",
+          "concepts": [
+            "Class — a blueprint for creating objects",
+            "Object — a specific instance of a class",
+            "__init__ method — constructor, runs when object is created",
+            "self keyword — refers to the current object",
+            "C comparison: similar to structs but more powerful"
+          ],
+          "practice": "Create a Person class with name, age, city. Create 3 Person objects. Print details."
+        },
+        {
+          "day": 2,
+          "topic": "Class Methods, Class Variables and Inheritance",
+          "concepts": [
+            "Instance variables vs class variables",
+            "Multiple methods in a class",
+            "Inheritance — child class gets all parent properties",
+            "super() — calls the parent class method",
+            "Why important for Path 1 — LangChain and FastAPI use classes everywhere"
+          ],
+          "practice": "Create Animal class. Create Dog and Cat classes that inherit from Animal."
+        },
+        {
+          "day": 3,
+          "topic": "File Reading and Writing",
+          "concepts": [
+            "Why files matter — chatbot saves memory to files",
+            "open() function with modes: r, w, a",
+            "with statement — automatically closes file when done",
+            "f.read() and f.readlines()",
+            "f.write() for writing text to files"
+          ],
+          "practice": "Save names to a file then read them back and print numbered."
+        },
+        {
+          "day": 4,
+          "topic": "Working with JSON — The Language of APIs",
+          "concepts": [
+            "JSON is the standard format for sending data between programs and APIs",
+            "Looks like a Python dictionary",
+            "json.loads() — converts JSON string to Python dictionary",
+            "json.dumps() — converts Python dictionary to JSON string",
+            "json.dump() and json.load() for saving and reading JSON files",
+            "Critical for Path 1 — every Gemini API response is JSON"
+          ],
+          "practice": "Create dictionary of 3 team members. Save to JSON file. Read back and print."
+        },
+        {
+          "day": 5,
+          "topic": "Week 3 Project — Student Management System",
+          "project": {
+            "requirements": [
+              "Student class with name, roll_number, marks list",
+              "average() method returns average marks",
+              "grade() method returns A/B/C/D/F",
+              "to_dict() method converts object to dictionary",
+              "display() method prints all details",
+              "Add new students",
+              "Save all students to JSON file",
+              "Load students from JSON on startup",
+              "Find student with highest average",
+              "Push to GitHub by Sunday night"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "title": "Error Handling, Modules and pip Packages",
+      "goal": "Write code that does not crash. Use other people's libraries.",
+      "resource": "Harry's Python course — Error Handling and Modules sections",
+      "days": [
+        {
+          "day": 1,
+          "topic": "Error Handling with Try / Except",
+          "concepts": [
+            "Why errors happen — bad input, missing files, network failures",
+            "try / except — risky code in try, fallback in except",
+            "Specific exceptions: ValueError, FileNotFoundError",
+            "finally block — runs whether or not an error occurred",
+            "raise statement — create and throw your own errors"
+          ],
+          "practice": "Rewrite Week 1 calculator with full error handling — division by zero and non-number input."
+        },
+        {
+          "day": 2,
+          "topic": "Modules — Organising Your Code into Files",
+          "concepts": [
+            "Any Python file is a module",
+            "import statement — makes another file's code available",
+            "from import — imports only what you need",
+            "Standard library modules: os, sys, datetime, math, random",
+            "__name__ == '__main__' — runs only when file is executed directly"
+          ],
+          "practice": "Split Week 3 Student project into 3 files: student.py, database.py, main.py"
+        },
+        {
+          "day": 3,
+          "topic": "pip — Installing External Packages",
+          "concepts": [
+            "pip is Python's package manager — like an app store for libraries",
+            "pip install — installs any package from the internet",
+            "requirements.txt — lists all packages the project needs",
+            "Virtual environments — isolated package space per project",
+            "Activating venv on Windows and Mac/Linux"
+          ],
+          "practice": "Create venv for Friday project. Install requests, python-dotenv, rich, httpx. Create requirements.txt."
+        },
+        {
+          "day": 4,
+          "topic": "Environment Variables and .env Files",
+          "concepts": [
+            "Environment variables store secrets outside your code",
+            "Never put API keys directly in code — anyone can steal them from GitHub",
+            ".env file stores all secret values locally",
+            "python-dotenv loads .env into your program",
+            "os.getenv() retrieves environment variable values safely",
+            "Always add .env to .gitignore"
+          ],
+          "practice": "Create .env with 3 fake API keys. Load and print them. Add .env to .gitignore."
+        },
+        {
+          "day": 5,
+          "topic": "Week 4 Project — Mini API Client",
+          "project": {
+            "requirements": [
+              "Use requests library to call Open-Meteo free weather API",
+              "Ask user for city name",
+              "Get current temperature, wind speed, weather condition",
+              "Print a nicely formatted weather report",
+              "Save result to weather_log.json file",
+              "Full error handling: no internet, city not found, API down",
+              "Push to GitHub by Sunday night"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "title": "APIs, Requests and Working with Real Data",
+      "goal": "Make real API calls and handle real-world data confidently.",
+      "days": [
+        { "day": 1, "topic": "HTTP and APIs", "key_concepts": "GET vs POST, status codes, headers", "project": "Call 3 different free APIs" },
+        { "day": 2, "topic": "Requests library deep dive", "key_concepts": "requests.get(), requests.post(), response.json(), parameters", "project": "Build a currency converter using API" },
+        { "day": 3, "topic": "Sending POST requests", "key_concepts": "JSON body, authentication headers, nested JSON responses", "project": "Send data to httpbin.org test API" },
+        { "day": 4, "topic": "Async basics", "key_concepts": "async/await, asyncio, aiohttp for async requests", "project": "Async version of weather app" },
+        { "day": 5, "topic": "Week 5 Project", "key_concepts": "Full async news client", "project": "News headline fetcher using NewsAPI" }
+      ]
+    },
+    {
+      "week": 6,
+      "title": "Gemini API Deep Dive",
+      "goal": "Build Friday's first working terminal chatbot using Gemini.",
+      "days": [
+        { "day": 1, "topic": "Setup Gemini API", "key_concepts": "API key from aistudio.google.com, google-generativeai library", "project": "Terminal chatbot in 20 lines" },
+        { "day": 2, "topic": "Conversation history", "key_concepts": "Passing previous messages, role types: user and model", "project": "Multi-turn conversation loop" },
+        { "day": 3, "topic": "System prompts", "key_concepts": "Giving Gemini a personality, temperature and safety settings", "project": "Friday's first personality" },
+        { "day": 4, "topic": "Streaming responses", "key_concepts": "Getting words as they generate, real-time display", "project": "Streaming chatbot in terminal" },
+        { "day": 5, "topic": "Week 6 Project", "key_concepts": "Full terminal chatbot with personality, memory, streaming, error handling", "project": "Complete terminal Friday v0.1" }
+      ]
+    },
+    {
+      "week": 7,
+      "title": "FastAPI and Connecting Frontend to Backend",
+      "goal": "Build a production-ready backend API for Friday.",
+      "days": [
+        { "day": 1, "topic": "FastAPI basics", "key_concepts": "Endpoints, GET vs POST, path parameters, automatic docs at /docs", "project": "Hello World API server" },
+        { "day": 2, "topic": "Pydantic models", "key_concepts": "Request and response models, validation, type hints", "project": "Chat API with proper models" },
+        { "day": 3, "topic": "Connecting Gemini to FastAPI", "key_concepts": "Moving chatbot logic into endpoint, CORS middleware", "project": "Friday as an API service" },
+        { "day": 4, "topic": "WebSockets basics", "key_concepts": "Real-time two-way communication, why better than polling for chat", "project": "Real-time chat via WebSocket" },
+        { "day": 5, "topic": "Week 7 Project", "key_concepts": "Complete backend with /chat, /clear, /status, error handling, logging", "project": "Production-ready Friday backend" }
+      ]
+    },
+    {
+      "week": 8,
+      "title": "Final Integration and Path 1 Readiness Test",
+      "goal": "Every member independently builds a simple Gemini chatbot API with memory in 3 hours.",
+      "days": [
+        { "day": 1, "topic": "Git and collaboration", "key_concepts": "Branching, pull requests, merge conflicts, team GitHub workflow", "project": "Team practices merging all Week 7 work" },
+        { "day": 2, "topic": "Code quality", "key_concepts": "Clean code, readable functions, naming conventions, comments, docstrings", "project": "Refactor Week 6 project with clean code" },
+        { "day": 3, "topic": "Debugging techniques", "key_concepts": "VS Code debugger, print debugging, reading error tracebacks", "project": "Debug 10 intentionally broken programs" },
+        { "day": 4, "topic": "Review and fill gaps", "key_concepts": "Each member identifies weakest area and spends full day practicing", "project": "Individual practice session" },
+        { "day": 5, "topic": "Path 1 Readiness Test", "key_concepts": "All 6 members independently build Gemini chatbot API with memory in 3 hours", "project": "PASS = ready for Path 1" }
+      ],
+      "readiness_test_requirements": [
+        "Create a Python virtual environment and install required packages",
+        "Set up a .env file and load API keys securely",
+        "Make a POST request to the Gemini API and print the response",
+        "Build a multi-turn conversation with memory using a list of messages",
+        "Create a FastAPI server with a /chat endpoint",
+        "Handle errors gracefully — no crashes on bad input",
+        "Push all code to GitHub with a clear README"
+      ]
+    }
+  ],
+
+  "daily_study_structure": {
+    "total_minutes": 90,
+    "blocks": [
+      { "duration": "15 minutes", "activity": "Review yesterday — read through old code without running it. Can you explain every line?" },
+      { "duration": "45 minutes", "activity": "Learn today's topic — type every code example yourself, never copy-paste. Run it, break it, fix it." },
+      { "duration": "30 minutes", "activity": "Practice exercise — complete the day's exercise. Commit and push to GitHub every single day." }
+    ]
+  },
+
+  "common_mistakes": [
+    { "mistake": "Missing colon after if/for/def", "wrong": "if x > 5", "correct": "if x > 5:" },
+    { "mistake": "Wrong indentation", "wrong": "Mixing 2 and 4 spaces", "correct": "Always exactly 4 spaces everywhere" },
+    { "mistake": "Using = instead of ==", "wrong": "if name = 'Shuv':", "correct": "if name == 'Shuv':" },
+    { "mistake": "Not converting input", "wrong": "age = input(); age + 1", "correct": "age = int(input()); age + 1" },
+    { "mistake": "Forgetting self in methods", "wrong": "def greet(name):", "correct": "def greet(self, name):" },
+    { "mistake": "Forgetting return", "wrong": "def add(a,b): a + b", "correct": "def add(a,b): return a + b" }
+  ],
+
+  "team_rules": [
+    "Code every single day — even 30 minutes",
+    "Push at least one commit to GitHub every working day",
+    "Sunday 30-minute team video call — each member demos their week project",
+    "If stuck for more than 45 minutes, ask a teammate immediately",
+    "Shuv teaches the team every Saturday — 45 minutes live coding session",
+    "No shame in being stuck — silence wastes everyone's time"
+  ],
+
+  "resources": [
+    { "name": "Harry's Python Course", "covers": "Complete Python from scratch", "link": "Search on YouTube" },
+    { "name": "CS50P Harvard", "covers": "Structured Python course with problem sets", "link": "cs50.harvard.edu/python" },
+    { "name": "Python Official Docs", "covers": "Every built-in function and module", "link": "docs.python.org" },
+    { "name": "W3Schools Python", "covers": "Quick syntax reference", "link": "w3schools.com/python" },
+    { "name": "Real Python", "covers": "In-depth tutorials on specific topics", "link": "realpython.com" },
+    { "name": "Google Gemini API Docs", "covers": "Official API documentation", "link": "ai.google.dev/docs" },
+    { "name": "FastAPI Docs", "covers": "Official FastAPI documentation", "link": "fastapi.tiangolo.com" },
+    { "name": "Stack Overflow", "covers": "When you are stuck — search your error message", "link": "stackoverflow.com" }
+  ]
+}

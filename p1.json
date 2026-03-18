@@ -1,0 +1,412 @@
+{
+  "project": "Jarvis AI Project",
+  "document": "Path 1 — Building a Voice-Enabled AI Chatbot Using Google Gemini API",
+  "created_by": "Suvendu",
+  "role": "ML Engineer Lead",
+  "college": "Trident Academy of Technology",
+  "duration": "4 Months — 16 Weeks",
+  "team_size": 6,
+  "hours_per_week": "15 to 20 hours per member",
+  "difficulty": "Beginner Friendly",
+  "end_goal": "A working voice-enabled AI assistant called Friday deployed live on the internet",
+
+  "friday_features": [
+    { "feature": "Text chat", "description": "Users type messages and Friday responds intelligently", "built_in": "Month 1" },
+    { "feature": "Conversation memory", "description": "Friday remembers what was said earlier in the conversation", "built_in": "Month 2" },
+    { "feature": "Long-term memory", "description": "Friday remembers facts about the user across sessions", "built_in": "Month 2" },
+    { "feature": "Voice input", "description": "Users speak to Friday using a microphone", "built_in": "Month 3" },
+    { "feature": "Voice output", "description": "Friday speaks its responses aloud in a natural voice", "built_in": "Month 3" },
+    { "feature": "Web search tool", "description": "Friday searches the internet to answer current questions", "built_in": "Month 3" },
+    { "feature": "Document reading", "description": "Friday reads and answers questions about uploaded PDFs", "built_in": "Month 3" },
+    { "feature": "Personality", "description": "Friday has a consistent name, tone, and style", "built_in": "Month 2" },
+    { "feature": "Web interface", "description": "Clean polished chat UI accessible from any browser", "built_in": "Month 4" },
+    { "feature": "Deployed online", "description": "Friday is live on the internet with a shareable link", "built_in": "Month 4" }
+  ],
+
+  "tech_stack": [
+    { "technology": "Python 3.11", "purpose": "Main programming language for backend and AI logic", "used_by": "All members" },
+    { "technology": "Google Gemini API", "purpose": "The AI brain — understands and responds to messages", "used_by": "ML Engineer" },
+    { "technology": "FastAPI", "purpose": "Backend web server that connects frontend to AI", "used_by": "Backend Dev" },
+    { "technology": "React + Tailwind CSS", "purpose": "Frontend chat interface", "used_by": "Frontend Dev" },
+    { "technology": "LangChain", "purpose": "Framework to manage AI conversations, memory, and tools", "used_by": "ML Engineer" },
+    { "technology": "FAISS / ChromaDB", "purpose": "Vector database that stores and retrieves memories", "used_by": "Data Engineer" },
+    { "technology": "Whisper", "purpose": "Speech-to-text — converts voice to text", "used_by": "ML Engineer" },
+    { "technology": "gTTS / ElevenLabs", "purpose": "Text-to-speech — converts Friday's response to voice", "used_by": "ML Engineer" },
+    { "technology": "Docker", "purpose": "Packages the entire app so it runs anywhere", "used_by": "MLOps" },
+    { "technology": "Git + GitHub", "purpose": "Version control — tracks all code changes", "used_by": "All members" },
+    { "technology": "Render / HuggingFace Spaces", "purpose": "Free cloud platform to deploy Friday online", "used_by": "MLOps" },
+    { "technology": "WebSockets", "purpose": "Real-time communication between frontend and backend", "used_by": "Backend Dev" }
+  ],
+
+  "team_roles": [
+    { "member": "Member 1 — Shuv", "role": "ML Engineer Lead", "responsibility": "Gemini API, LangChain, memory system, voice integration" },
+    { "member": "Member 2", "role": "Data Engineer", "responsibility": "RAG pipeline, vector DB, dataset preparation, embeddings" },
+    { "member": "Member 3", "role": "Backend Developer", "responsibility": "FastAPI server, WebSockets, API endpoints, tool execution" },
+    { "member": "Member 4", "role": "Frontend Developer", "responsibility": "React chat UI, voice controls, design, user experience" },
+    { "member": "Member 5", "role": "Research Member", "responsibility": "Prompt engineering, response evaluation, documentation" },
+    { "member": "Member 6", "role": "MLOps Member", "responsibility": "Docker, deployment, GitHub Actions, monitoring, reliability" }
+  ],
+
+  "months": [
+    {
+      "month": 1,
+      "title": "Foundation and First Working Chatbot",
+      "goal": "Every team member is set up and Friday responds to text messages in a browser.",
+      "weeks": [
+        {
+          "week": 1,
+          "title": "Team Setup and Python Refresher",
+          "tasks": [
+            { "task": "Install Python 3.11", "detail": "Download from python.org, install on every team member's machine" },
+            { "task": "Install VS Code", "detail": "Download from code.visualstudio.com, install Python and Git extensions" },
+            { "task": "Install Git", "detail": "Download from git-scm.com, configure with name and email on each machine" },
+            { "task": "Create GitHub account", "detail": "Every member creates a free account at github.com" },
+            { "task": "Create team GitHub repo", "detail": "Shuv creates private repo called friday-ai, adds all members as collaborators" },
+            { "task": "Learn Git basics", "detail": "All members practice: git clone, add, commit, push, pull" },
+            { "task": "Python refresher", "detail": "Review: functions, classes, loops, dictionaries, file reading, pip install" },
+            { "task": "Install pip packages", "detail": "Run: pip install requests python-dotenv google-generativeai" },
+            { "task": "Create project folder structure", "detail": "Setup: /backend, /frontend, /data, /docs, /tests folders in repo" },
+            { "task": "Team daily standup", "detail": "Set fixed 15-minute daily call time — morning works best — commit to it" }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Gemini API Setup and First Response",
+          "tasks": [
+            { "task": "Get Gemini API key", "detail": "Go to aistudio.google.com, sign in, click Get API Key, copy it" },
+            { "task": "Store API key safely", "detail": "Create .env file, write GEMINI_API_KEY=your_key. Add .env to .gitignore — never push keys to GitHub" },
+            { "task": "Write first API call", "detail": "Create backend/test_gemini.py — send Hello to Gemini and print the response" },
+            { "task": "Understand the API response", "detail": "Study what Gemini returns — the response object, how to extract text, error handling" },
+            { "task": "Build basic chat loop", "detail": "While loop that takes input, sends to Gemini, prints response, repeats" },
+            { "task": "Add conversation history", "detail": "Pass previous messages to Gemini so it remembers the conversation context" },
+            { "task": "Test with 20 different prompts", "detail": "Each member tests 20 questions — note what works and what does not" },
+            { "task": "Write system prompt", "detail": "Write Friday's personality: name, tone, rules, what it should and should not do" },
+            { "task": "Frontend: Design wireframe", "detail": "Member 4 sketches the chat UI on paper — layout of chat bubbles, input box, send button" },
+            { "task": "Backend: Plan API endpoints", "detail": "Member 3 lists all endpoints needed: /chat, /clear, /status" }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "FastAPI Backend Setup",
+          "tasks": [
+            { "task": "Install FastAPI and Uvicorn", "detail": "Run: pip install fastapi uvicorn python-multipart pydantic" },
+            { "task": "Create main.py", "detail": "Create backend/main.py with basic FastAPI app and health check at /status" },
+            { "task": "Create /chat endpoint", "detail": "POST endpoint that receives a message, sends to Gemini, returns response as JSON" },
+            { "task": "Add CORS middleware", "detail": "Add CORSMiddleware so React frontend can call backend without errors" },
+            { "task": "Add request/response models", "detail": "Use Pydantic to define ChatRequest and ChatResponse models" },
+            { "task": "Add conversation history to backend", "detail": "Store conversation history in memory per session" },
+            { "task": "Test with Postman or curl", "detail": "All members test the /chat endpoint" },
+            { "task": "Add error handling", "detail": "Handle: API key missing, Gemini down, empty message, too-long message" },
+            { "task": "Add logging", "detail": "Log every request and response to a file for debugging" },
+            { "task": "Frontend: Start React app", "detail": "Member 4 runs npx create-react-app friday-ui and sets up Tailwind CSS" }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Connect Frontend to Backend — First Full Demo",
+          "tasks": [
+            { "task": "Build chat UI in React", "detail": "Message list, input box, send button, loading spinner" },
+            { "task": "Style with Tailwind CSS", "detail": "Clean dark theme, chat bubbles, timestamps" },
+            { "task": "Connect frontend to backend", "detail": "Use fetch() or axios to call POST /chat and display response" },
+            { "task": "Add loading state", "detail": "Show typing indicator while waiting for Gemini's response" },
+            { "task": "Add clear chat button", "detail": "Clears conversation history in both UI and backend" },
+            { "task": "Test full conversation flow", "detail": "All 6 members test the complete flow" },
+            { "task": "Fix bugs together", "detail": "2-hour bug fixing session as full team — document all issues" },
+            { "task": "Write README.md", "detail": "Document how to install and run the project" },
+            { "task": "Month 1 demo", "detail": "Record 3-minute screen recording showing Friday having a conversation" },
+            { "task": "Month 1 retrospective", "detail": "30-minute team meeting: what went well, what was hard, what to improve" }
+          ],
+          "checkpoint": [
+            "Working React chat interface at localhost:3000",
+            "FastAPI backend running at localhost:8000",
+            "Friday responding intelligently to any text message",
+            "Multi-turn conversation working",
+            "All code committed to GitHub",
+            "README that explains how to run the project"
+          ]
+        }
+      ]
+    },
+    {
+      "month": 2,
+      "title": "Memory, Personality and LangChain",
+      "goal": "Friday gets a real brain with long-term memory, consistent personality, and smart context management.",
+      "weeks": [
+        {
+          "week": 5,
+          "title": "LangChain Integration",
+          "tasks": [
+            { "task": "Install LangChain", "detail": "pip install langchain langchain-google-genai langchain-community" },
+            { "task": "Understand LangChain basics", "detail": "Study: LLMs, Chains, Prompts, Memory, Agents — read official docs for 2 hours" },
+            { "task": "Replace Gemini API calls with LangChain", "detail": "Use ChatGoogleGenerativeAI from langchain-google-genai" },
+            { "task": "Create PromptTemplate", "detail": "Build Friday's system prompt as a LangChain PromptTemplate with variables" },
+            { "task": "Add ConversationBufferMemory", "detail": "Use LangChain built-in memory to manage short-term conversation history automatically" },
+            { "task": "Create ConversationChain", "detail": "Combine LLM + Prompt + Memory into a single LangChain ConversationChain" },
+            { "task": "Test conversation flow", "detail": "Verify Friday still responds correctly and remembers current conversation" },
+            { "task": "Refactor backend/main.py", "detail": "Update FastAPI endpoints to use new LangChain chain" },
+            { "task": "Document changes", "detail": "Member 5 updates README with new architecture and setup steps" },
+            { "task": "Code review session", "detail": "All members review each other's code — minimum one comment per file" }
+          ]
+        },
+        {
+          "week": 6,
+          "title": "Long-Term Memory with Vector Database",
+          "tasks": [
+            { "task": "Install vector DB libraries", "detail": "pip install chromadb sentence-transformers tiktoken" },
+            { "task": "Understand embeddings", "detail": "Numbers that represent meaning — similar ideas have similar numbers" },
+            { "task": "Set up ChromaDB", "detail": "Create local ChromaDB collection called friday_memory" },
+            { "task": "Create memory functions", "detail": "Write: save_memory(), search_memory(), delete_memory() functions" },
+            { "task": "Extract important facts from conversation", "detail": "After each reply ask Gemini to extract user facts and save to ChromaDB" },
+            { "task": "Inject memories into prompt", "detail": "Before each reply search ChromaDB and add relevant memories to context" },
+            { "task": "Test memory persistence", "detail": "Close app, reopen, ask Friday what it knows — it should remember" },
+            { "task": "Add memory management UI", "detail": "Frontend sidebar showing saved memories with delete button" },
+            { "task": "Handle memory conflicts", "detail": "If new info contradicts old, update instead of duplicating" },
+            { "task": "Member 2 leads this week", "detail": "Data Engineer owns entire vector DB setup" }
+          ]
+        },
+        {
+          "week": 7,
+          "title": "Friday's Personality and System Prompt Engineering",
+          "tasks": [
+            { "task": "Design Friday's personality document", "detail": "Member 5 writes 1-page document: name, tone, values, speech style, rules" },
+            { "task": "Write the master system prompt", "detail": "Convert personality document into detailed system prompt — minimum 300 words" },
+            { "task": "Add dynamic context injection", "detail": "System prompt includes: current date, user name, relevant memories, conversation summary" },
+            { "task": "Test personality consistency", "detail": "Ask Friday 100 different questions — check personality stays consistent" },
+            { "task": "Add greeting behavior", "detail": "Friday greets returning users by name and references their history" },
+            { "task": "Add refusal behavior", "detail": "Friday politely refuses inappropriate questions — test 20 edge cases" },
+            { "task": "Tune response length", "detail": "Concise for simple questions, detailed for complex ones" },
+            { "task": "Add markdown formatting", "detail": "Friday uses bold, bullets, code blocks when appropriate" },
+            { "task": "Integrate markdown renderer", "detail": "Member 4 adds react-markdown to render formatted responses" },
+            { "task": "Team personality review", "detail": "All 6 members test Friday for 30 minutes and write feedback" }
+          ]
+        },
+        {
+          "week": 8,
+          "title": "Smart Context Management",
+          "tasks": [
+            { "task": "Understand context window problem", "detail": "Gemini can only remember a limited number of words — long conversations hit this limit" },
+            { "task": "Implement conversation summarizer", "detail": "When conversation exceeds 10 exchanges, summarize older messages into a paragraph" },
+            { "task": "Add summary to context", "detail": "Include conversation summary in system prompt" },
+            { "task": "Test long conversations", "detail": "Have 50-message conversation — verify it stays coherent throughout" },
+            { "task": "Add conversation export", "detail": "Button to export full conversation as .txt file" },
+            { "task": "Add conversation history page", "detail": "Page showing past conversation summaries with dates" },
+            { "task": "Optimize API costs", "detail": "Count tokens before sending — truncate if too long" },
+            { "task": "Add session management", "detail": "Each browser session gets unique ID — multiple users simultaneously" },
+            { "task": "Month 2 demo", "detail": "Record 5-minute demo showing Friday remembering user across two separate sessions" },
+            { "task": "Month 2 retrospective", "detail": "Team meeting: review progress, reassign tasks if anyone behind, plan Month 3" }
+          ],
+          "checkpoint": [
+            "LangChain managing all conversation logic and memory",
+            "ChromaDB storing long-term memories that persist across sessions",
+            "Friday knowing user's name, preferences, and history",
+            "Detailed personality that stays consistent",
+            "Smart context management for very long conversations",
+            "Conversation summaries and export working"
+          ]
+        }
+      ]
+    },
+    {
+      "month": 3,
+      "title": "Voice, Tools and Real-World Capabilities",
+      "goal": "Friday gets ears and a voice. It listens, speaks, searches the web, and reads documents.",
+      "weeks": [
+        {
+          "week": 9,
+          "title": "Voice Input with Whisper",
+          "tasks": [
+            { "task": "Install audio libraries", "detail": "pip install openai-whisper sounddevice soundfile numpy pyaudio" },
+            { "task": "Understand Whisper", "detail": "Free speech recognition model by OpenAI — converts audio to text locally" },
+            { "task": "Download Whisper model", "detail": "Run whisper.load_model('base') — downloads base model once (~150MB)" },
+            { "task": "Record audio from microphone", "detail": "Write record_audio.py — records 5 seconds from mic, saves as .wav file" },
+            { "task": "Transcribe audio with Whisper", "detail": "Pass .wav file to Whisper, print transcribed text — test with 20 sentences" },
+            { "task": "Add voice activity detection", "detail": "Only record when user is speaking — stop when silent for 1 second" },
+            { "task": "Connect voice input to chat", "detail": "Record → transcribe → send to Gemini → display response" },
+            { "task": "Add to FastAPI backend", "detail": "Create POST /transcribe endpoint that accepts audio and returns text" },
+            { "task": "Frontend: microphone button", "detail": "Member 4 adds mic button — red when recording, gray when not" },
+            { "task": "Test voice input accuracy", "detail": "All members test with different accents, speeds, and noise levels" }
+          ]
+        },
+        {
+          "week": 10,
+          "title": "Voice Output — Friday Speaks Back",
+          "tasks": [
+            { "task": "Option A: gTTS", "detail": "pip install gtts playsound — free, basic, robotic voice" },
+            { "task": "Option B: ElevenLabs", "detail": "Sign up at elevenlabs.io — 10,000 free characters/month, much more natural. Recommended." },
+            { "task": "Implement TTS function", "detail": "Write speak(text) function — converts Friday's response to audio and plays it" },
+            { "task": "Add voice selection", "detail": "If using ElevenLabs, let user choose from 5 different voice options" },
+            { "task": "Handle long responses", "detail": "Split into sentences, play sequentially without gaps" },
+            { "task": "Add mute/unmute button", "detail": "Frontend speaker icon that toggles voice output on and off" },
+            { "task": "Add playback controls", "detail": "Pause, resume, stop buttons for when Friday is speaking" },
+            { "task": "Handle interruption", "detail": "If user speaks while Friday talks, stop playback and process new input" },
+            { "task": "Test voice quality", "detail": "All members listen to 50 responses — rate naturalness 1-10, aim for 7+" },
+            { "task": "Add voice speed control", "detail": "Settings slider: 0.5x to 2x playback speed" }
+          ]
+        },
+        {
+          "week": 11,
+          "title": "Tools — Web Search and Document Reading",
+          "tasks": [
+            { "task": "Understand LangChain Agents", "detail": "Agent lets AI decide which tool to use — study Tools, AgentExecutor, ReAct pattern" },
+            { "task": "Install search tools", "detail": "pip install duckduckgo-search langchain-community" },
+            { "task": "Add web search tool", "detail": "DuckDuckGo search tool — Friday can now search the web for current info" },
+            { "task": "Add calculator tool", "detail": "Safe Python eval() as calculator — Friday can solve math problems" },
+            { "task": "Add current date/time tool", "detail": "Simple function returning today's date and time" },
+            { "task": "Install PDF processing", "detail": "pip install pypdf langchain-text-splitters" },
+            { "task": "Add document reading tool", "detail": "User uploads PDF — chunked, embedded, stored in ChromaDB, Friday answers questions about it" },
+            { "task": "Create Agent with all tools", "detail": "Replace ConversationChain with AgentExecutor that has access to all tools" },
+            { "task": "Add tool usage display", "detail": "UI shows when Friday uses a tool: Searching the web, Reading document" },
+            { "task": "Test all tools with 30 queries", "detail": "Test every tool with at least 30 real questions — document and fix failures" }
+          ]
+        },
+        {
+          "week": 12,
+          "title": "Full Voice Pipeline Integration",
+          "tasks": [
+            { "task": "Build complete voice loop", "detail": "Microphone → Whisper → LangChain Agent → Gemini → TTS → Speaker" },
+            { "task": "Reduce latency", "detail": "Target under 3 seconds from end of speech to start of Friday's voice response" },
+            { "task": "Add wake word detection", "detail": "Optional: use pvporcupine library for Hey Friday activation" },
+            { "task": "Test full voice conversations", "detail": "20 complete voice conversations — minimum 10 turns each — fix every issue" },
+            { "task": "Test with tools via voice", "detail": "Ask Friday to search web, do math, tell time — all via voice only" },
+            { "task": "Test edge cases", "detail": "Background noise, multiple speakers, very fast speech, silence" },
+            { "task": "Performance benchmarking", "detail": "Measure: average response latency, transcription accuracy, TTS quality rating" },
+            { "task": "Fix all critical bugs", "detail": "No voice pipeline bugs go into Month 4 — dedicated bug-fixing day" },
+            { "task": "Month 3 demo", "detail": "Record 7-minute demo: full voice conversation with web search and document reading" },
+            { "task": "Month 3 retrospective", "detail": "Celebrate progress, identify polish needed in Month 4, plan deployment" }
+          ],
+          "checkpoint": [
+            "Voice input — speak to Friday naturally using microphone",
+            "Voice output — Friday speaks responses in natural voice",
+            "Web search — Friday searches DuckDuckGo for current information",
+            "Document reading — Friday reads and answers questions about PDFs",
+            "Calculator — Friday solves mathematical problems accurately",
+            "Full voice pipeline working end-to-end in under 3 seconds"
+          ]
+        }
+      ]
+    },
+    {
+      "month": 4,
+      "title": "Polish, Deploy and Launch",
+      "goal": "Friday goes live on the internet. Polished, fast, secure, and accessible from anywhere.",
+      "weeks": [
+        {
+          "week": 13,
+          "title": "Polish the User Interface",
+          "tasks": [
+            { "task": "Full UI audit", "detail": "Every member uses Friday for 1 hour and writes down every frustration or bug" },
+            { "task": "Redesign if needed", "detail": "Member 4 addresses all feedback — aim for UI as clean as ChatGPT" },
+            { "task": "Add onboarding flow", "detail": "First-time users see: what Friday is, how to use it, Try saying prompts" },
+            { "task": "Add settings page", "detail": "Voice on/off, voice selection, response speed, memory management" },
+            { "task": "Add keyboard shortcuts", "detail": "Enter to send, Escape to clear, Ctrl+M for microphone, Ctrl+L to clear chat" },
+            { "task": "Make it mobile responsive", "detail": "Friday works perfectly on a phone browser — many recruiters check mobile" },
+            { "task": "Add message copy button", "detail": "Copy icon on each message to copy text to clipboard" },
+            { "task": "Add code syntax highlighting", "detail": "Highlight code responses using react-syntax-highlighter" },
+            { "task": "Add dark mode toggle", "detail": "Switch between dark and light themes — save preference" },
+            { "task": "Accessibility audit", "detail": "Keyboard navigation, screen reader labels, color contrast passes WCAG AA" }
+          ]
+        },
+        {
+          "week": 14,
+          "title": "Performance Optimization and Security",
+          "tasks": [
+            { "task": "Profile response latency", "detail": "Measure time for each step — find slowest bottleneck" },
+            { "task": "Add response streaming", "detail": "Use Gemini streaming API to display text immediately instead of waiting" },
+            { "task": "Implement caching", "detail": "Cache common answers so they return instantly" },
+            { "task": "Optimize Whisper speed", "detail": "Tiny model for fast transcription, base for accuracy — user choice" },
+            { "task": "Add rate limiting", "detail": "Max 20 requests per minute per user to stay within Gemini free tier" },
+            { "task": "Secure the API key", "detail": "API key only on backend — never in frontend code or browser requests" },
+            { "task": "Add input sanitization", "detail": "Strip dangerous characters before sending to Gemini" },
+            { "task": "Add error messages", "detail": "Every possible error shows helpful message — never a blank screen" },
+            { "task": "Load testing", "detail": "Simulate 5 simultaneous users — verify no crashes" },
+            { "task": "Security review", "detail": "Member 6 reviews all endpoints for vulnerabilities and exposed secrets" }
+          ]
+        },
+        {
+          "week": 15,
+          "title": "Docker and Deployment Preparation",
+          "tasks": [
+            { "task": "Install Docker", "detail": "Download Docker Desktop from docker.com" },
+            { "task": "Write Dockerfile for backend", "detail": "Installs Python, copies code, runs uvicorn on port 8000" },
+            { "task": "Write Dockerfile for frontend", "detail": "Builds React app, serves with nginx on port 80" },
+            { "task": "Write docker-compose.yml", "detail": "Runs both backend and frontend with one command: docker-compose up" },
+            { "task": "Test Docker build locally", "detail": "Verify everything works exactly as in development" },
+            { "task": "Write environment variables guide", "detail": "Document every environment variable needed" },
+            { "task": "Choose deployment platform", "detail": "Option A: Render.com (free, easiest). Option B: HuggingFace Spaces (great for AI)" },
+            { "task": "Create deployment account", "detail": "Member 6 creates account on chosen platform, connects GitHub repo" },
+            { "task": "Configure auto-deploy", "detail": "Every push to main branch automatically redeploys Friday" },
+            { "task": "Write deployment runbook", "detail": "Step-by-step guide so any member can redeploy in under 10 minutes" }
+          ]
+        },
+        {
+          "week": 16,
+          "title": "Go Live and Final Documentation",
+          "tasks": [
+            { "task": "Deploy backend to cloud", "detail": "Push backend Docker image to Render or HuggingFace — verify /status returns 200" },
+            { "task": "Deploy frontend to cloud", "detail": "Push React build to Vercel or Netlify — verify it loads and connects to backend" },
+            { "task": "Configure custom domain", "detail": "Optional: use Freenom or Namecheap for a free domain" },
+            { "task": "Final end-to-end test on live URL", "detail": "Every member tests Friday on live URL for 30 minutes — log every issue" },
+            { "task": "Fix launch-day bugs", "detail": "Dedicated 8-hour session to fix every issue found during live testing" },
+            { "task": "Record final demo video", "detail": "10-minute professional demo: text chat, voice, web search, document Q&A" },
+            { "task": "Write final README", "detail": "What Friday is, how to use it, how to install locally, team credits, architecture" },
+            { "task": "Create project presentation", "detail": "10-slide deck: problem, solution, demo, tech stack, team, future plans" },
+            { "task": "Write technical blog post", "detail": "Member 5 writes Medium or Dev.to article about how Friday was built" },
+            { "task": "Team celebration and Path 2 kickoff", "detail": "Celebrate finishing Path 1. Brief team on Path 2 and who leads what." }
+          ],
+          "checkpoint": [
+            "Friday is live on the internet with a shareable URL",
+            "Voice input and output working on live deployment",
+            "Web search, document reading, calculator tools working",
+            "Long-term memory persisting across sessions",
+            "Mobile responsive on any device",
+            "Professional README and demo video on GitHub",
+            "10-slide project presentation ready for interviews",
+            "Technical blog post published",
+            "Docker setup so anyone can run it locally in one command"
+          ]
+        }
+      ]
+    }
+  ],
+
+  "team_rules": [
+    "Code is committed to GitHub every working day — no exceptions",
+    "Nobody works alone on a problem for more than 2 hours — ask for help",
+    "The main branch always works — use feature branches, merge only tested code",
+    "No task is done until it is tested with real inputs and edge cases",
+    "Document as you build — comments, README updates, docstrings",
+    "Weekly demo every Sunday — 30 minutes, working code only, no slides"
+  ],
+
+  "resources": {
+    "python_and_backend": [
+      { "name": "Python Official Docs", "link": "docs.python.org" },
+      { "name": "FastAPI Official Docs", "link": "fastapi.tiangolo.com" },
+      { "name": "Real Python", "link": "realpython.com" },
+      { "name": "CS50P Harvard", "link": "cs50.harvard.edu/python" }
+    ],
+    "gemini_and_langchain": [
+      { "name": "Google AI Studio", "link": "aistudio.google.com" },
+      { "name": "Gemini API Docs", "link": "ai.google.dev/docs" },
+      { "name": "LangChain Docs", "link": "python.langchain.com" },
+      { "name": "LangChain Cookbook", "link": "github.com/langchain-ai/langchain" }
+    ],
+    "frontend": [
+      { "name": "React Official Docs", "link": "react.dev" },
+      { "name": "Tailwind CSS Docs", "link": "tailwindcss.com/docs" },
+      { "name": "The Odin Project", "link": "theodinproject.com" },
+      { "name": "Fireship YouTube", "link": "youtube.com/@Fireship" }
+    ],
+    "voice_and_audio": [
+      { "name": "Whisper GitHub", "link": "github.com/openai/whisper" },
+      { "name": "ElevenLabs Docs", "link": "elevenlabs.io/docs" },
+      { "name": "AssemblyAI Blog", "link": "assemblyai.com/blog" }
+    ],
+    "deployment": [
+      { "name": "Docker Official Docs", "link": "docs.docker.com" },
+      { "name": "Render Docs", "link": "render.com/docs" },
+      { "name": "Vercel Docs", "link": "vercel.com/docs" },
+      { "name": "Git and GitHub Guide", "link": "docs.github.com" }
+    ]
+  }
+}
